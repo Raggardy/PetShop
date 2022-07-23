@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using PetShop.Web.Data;
+using PetShop.DataAccess;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

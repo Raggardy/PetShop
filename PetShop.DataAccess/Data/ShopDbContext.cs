@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetShop.Web.Models;
+using PetShop.Models;
 
-namespace PetShop.Web.Data
+
+namespace PetShop.DataAccess
 {
     public class ShopDbContext : DbContext
     {
