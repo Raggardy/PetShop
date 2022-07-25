@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PetShop.DataAccess;
-
+using PetShop.DataAccess.Repository;
+using PetShop.DataAccess.Repository.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<ShopDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("PetShopDb"));
 });
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 var app = builder.Build();
 
@@ -31,6 +33,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

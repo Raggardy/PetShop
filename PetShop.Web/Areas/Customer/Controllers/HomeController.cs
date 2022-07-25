@@ -2,8 +2,9 @@
 using PetShop.Models;
 using System.Diagnostics;
 
-namespace PetShop.Web.Controllers
+namespace PetShop.Web.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
